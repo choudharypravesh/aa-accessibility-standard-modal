@@ -1,38 +1,215 @@
-.App {
+.app-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-size: 16px;
+  font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.onetrust-pc-dark-filter {
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#onetrust-banner-sdk {
+  background-color: #FFFFFF;
+  left: 50%!important;
+  top: 50%!important;
+  transform: translate(-50%, -50%)!important;
+  height: fit-content!important;
+  width: 48%;
+  position: fixed;
+  z-index: 2;
+  background-color: #fff;
+  max-width: 375px;
+  border-radius: 2.5px;
+  bottom: 1em;
+  left: 1em;
+  font-size: 16px;
+  max-height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 0 18px rgb(0 0 0 / 20%);
+}
+
+#onetrust-banner-sdk .ot-sdk-container, #onetrust-pc-sdk .ot-sdk-container, #ot-sdk-cookie-policy .ot-sdk-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#onetrust-banner-sdk .ot-sdk-row, #onetrust-pc-sdk .ot-sdk-row, #ot-sdk-cookie-policy .ot-sdk-row {
+  margin: 0;
+  max-width: none;
+  display: block;
+}
+
+#onetrust-banner-sdk #onetrust-button-group {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+#onetrust-banner-sdk .banner-actions-container {
+  text-align: center;
+}
+
+#onetrust-banner-sdk #onetrust-policy {
+  margin-top: 20px;
+}
+
+#onetrust-banner-sdk .banner-header {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+#onetrust-banner-sdk #onetrust-policy-title {
+  font-weight: 600;
+  font-size: 1em;
+  padding: 0 0 10px 25px;
+  float: left;
+  width: 80%;
+}
+
+#onetrust-banner-sdk #onetrust-policy-text, #onetrust-banner-sdk .ot-b-addl-desc {
+  clear: both;
+  float: left;
+  font-size: .82em;
+  line-height: 1.5;
+  padding: 10px 20px 20px 20px;
+  margin: 0;
+}
+
+#onetrust-banner-sdk button {
+  margin-bottom: 0.6rem;
+}
+
+#onetrust-banner-sdk #onetrust-accept-btn-handler {
+  background-color: #26890D;
+  border-color: #26890D;
+  color: #FFFFFF;
+  border: 1px solid #26890D;
+  margin-right: 1em;
+}
+
+#onetrust-banner-sdk #onetrust-reject-all-handler {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+#onetrust-banner-sdk #onetrust-accept-btn-handler:hover, #onetrust-banner-sdk #onetrust-reject-all-handler:hover {
+  border-color: #888;
+  opacity: 0.7;
+}
+
+#onetrust-banner-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #onetrust-pc-btn-handler {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: .82em;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .05em;
+  height: auto;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+#onetrust-banner-sdk .ot-sdk-columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0;
+  display: initial;
+}
+
+#onetrust-banner-sdk #onetrust-close-btn-container {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  #onetrust-banner-sdk .ot-sdk-container, #onetrust-pc-sdk .ot-sdk-container, #ot-sdk-cookie-policy .ot-sdk-container {
+      width: 100%;
+      padding: 0;
+      float: left;
+      box-sizing: border-box;
+      padding: 0;
+      display: initial;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 768px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent {
+      padding: 5%;
   }
-  to {
-    transform: rotate(360deg);
+
+  #onetrust-banner-sdk .banner-header {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+  }
+
+  #onetrust-banner-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #onetrust-pc-btn-handler {
+    width: 100%;
+  }
+}
+
+@media (min-width: 550px) {
+  #onetrust-banner-sdk {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 896px) {
+  #onetrust-banner-sdk.otFloatingRoundedCorner {
+    width: 100%;
+    max-width: 94%;
+    left: 0;
+    bottom: 0;
+  }
+
+  #onetrust-banner-sdk #onetrust-button-group-parent {
+    padding: 0 0px 30px 0px;
+  }
+
+  #onetrust-banner-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #onetrust-pc-btn-handler {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  #onetrust-banner-sdk {
+    width: 90%;
+  }
+
+  #onetrust-banner-sdk #onetrust-button-group-parent {
+    padding: 0 25px 30px 25px;
+  }
+
+  #onetrust-banner-sdk .ot-sdk-container {
+      width: 100%;
+      padding: 0;
   }
 }

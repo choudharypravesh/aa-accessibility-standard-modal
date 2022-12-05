@@ -1,0 +1,204 @@
+// Ideally, variables can be kept in a separate file
+$newday_black: #000000;
+$newday_white: #FFFFFF;
+$font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+$newday_green: #26890D;
+
+// Common CSS here
+body {
+	font-size: 16px;
+	font-family: $font-family;
+	margin: 0;
+	padding: 0;
+	color: $newday_black;
+}
+
+.app-container {
+	text-align: center;
+}
+
+// Modal specific CSS. Can be kept in a separate file.
+.newday-pc-dark-filter {
+	background: rgba(0,0,0,0.5);
+	transition: opacity 0.2s ease-in-out;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+#newday-modal-container {
+	background-color: $newday_white;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	height: fit-content;
+	width: 48%;
+	position: fixed;
+	z-index: 2;
+	background-color: $newday_white;
+	max-width: 375px;
+	border-radius: 2.5px;
+	max-height: 90%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	box-shadow: 0 0 18px rgb(0 0 0 / 20%);
+	transition: transform 0.2s ease-in-out;
+	.nd-dialog-container {
+		position: relative;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+	.nd-dialog-row {
+		margin: 0;
+		max-width: none;
+		display: block;
+	}
+	.button-group {
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+	}
+	.modal-actions-container {
+		text-align: center;
+		button {
+			width: 100%;
+			padding: 12px 10px;
+			font-size: .82em;
+			font-weight: 600;
+			line-height: 1.4;
+			letter-spacing: .05em;
+			height: auto;
+			white-space: normal;
+			word-break: break-word;
+			word-wrap: break-word;
+			margin-bottom: 0.6rem;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+	.modal-text {
+		margin-top: 20px;
+	}
+	.modal-header {
+		margin-left: 20px;
+		margin-bottom: 20px;
+		margin-right: 10px;
+	}
+	.title {
+		font-weight: 600;
+		font-size: 1em;
+		padding: 0 0 10px 25px;
+		float: left;
+		width: 80%;
+	}
+	.description {
+		clear: both;
+		float: left;
+		font-size: .82em;
+		line-height: 1.5;
+		padding: 10px 20px 20px 20px;
+		margin: 0;
+	}
+	#newday-accept-btn-handler {
+		background-color: $newday_green;
+		border-color: $newday_green;
+		color: $newday_white;
+		border: 1px solid #26890D;
+		margin-right: 1em;
+	}
+	#newday-reject-all-handler {
+		background-color: $newday_white;
+		border-color: $newday_white;
+		color: $newday_black;
+		border: 1px solid #000000;
+	}
+	#newday-pc-btn-handler {
+		width: 100%;
+		padding: 12px 10px;
+		font-size: .82em;
+		font-weight: 600;
+		line-height: 1.4;
+		letter-spacing: .05em;
+		height: auto;
+		white-space: normal;
+		word-break: break-word;
+		word-wrap: break-word;
+	}
+	.nd-dialog-columns {
+		width: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 0;
+		display: initial;
+	}
+	#newday-close-btn-container {
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		cursor: pointer;
+	}
+}
+@media (min-width: 550px) {
+	#newday-modal-container {
+		.nd-dialog-container {
+			width: 100%;
+			padding: 0;
+			float: left;
+			box-sizing: border-box;
+			padding: 0;
+			display: initial;
+		}
+		width: 90%;
+	}
+}
+@media only screen and (min-width: 768px) {
+	#newday-modal-container {
+		.button-group-parent {
+			padding: 5%;
+			button {
+				width: 100%;
+			}
+		}
+		.modal-header {
+			margin-left: 40px;
+			margin-bottom: 20px;
+			margin-right: 15px;
+		}
+	}
+}
+@media only screen and (min-width: 426px) and (max-width: 896px) {
+	#newday-modal-container {
+		width: 100%;
+		max-width: 94%;
+		.button-group-parent {
+			padding: 0 0px 30px 0px;
+			.modal-actions-container {
+				text-align: left;
+				padding-left: 20px;
+			}
+			button {
+				width: 45%;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 425px) {
+	#newday-modal-container {
+		width: 90%;
+		.button-group-parent {
+			padding: 0 25px 30px 25px;
+		}
+		.nd-dialog-container {
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
